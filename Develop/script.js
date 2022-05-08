@@ -3,9 +3,9 @@ $(document).ready(function(){
     $(".today").text(Time);    
     $("span").text(Time);
     $(".saveBtn").on("click", function(){
-        let textValue = $(this).siblings('.text').val();
-        let timeBlock = $(this).parent().attr("id");
-        localStorage.setItem(timeBlock, textValue);
+        let text = $(this).siblings('.text').val();
+        let block = $(this).parent().attr("id");
+        localStorage.setItem(block, text);
     })
     
     function keepinTime(){
@@ -29,13 +29,8 @@ $(document).ready(function(){
             }
         })
     }
-    
     keepinTime()
-    
     for(let i = 9; i< 17; i++){
-   
     $(`#${i} .text`).val(localStorage.getItem(`${i}`));
-    
-
     }
     })
