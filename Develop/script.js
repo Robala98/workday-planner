@@ -8,15 +8,10 @@ $(document).ready(function(){
         localStorage.setItem(block, text);
     })
     
-    function keepinTime(){
-    
-        let Hour = moment().hours();
-    
-    
+    function Timekeeper(){
+        let Hour = moment().hours();  
         $(".time-block").each(function(){
             let Hour2 = parseInt($(this).attr("id"));
-         
-    
             if(Hour2 < Hour){
                 $(this).addClass("past");
             } else if(Hour2 === Hour){
@@ -29,7 +24,7 @@ $(document).ready(function(){
             }
         })
     }
-    keepinTime()
+    Timekeeper()
     for(let i = 9; i< 17; i++){
     $(`#${i} .text`).val(localStorage.getItem(`${i}`));
     }
